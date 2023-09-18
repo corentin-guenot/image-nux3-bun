@@ -12,9 +12,8 @@ WORKDIR /src
 FROM base as build
 
 COPY --link package.json bun.lockb .
-RUN bun install --production
+RUN bun install
 
 COPY --link . .
 
 RUN bun run build
-RUN bun prune
